@@ -1,9 +1,6 @@
 package com.example.stock.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Stock {
@@ -14,6 +11,10 @@ public class Stock {
     private Long productId;
 
     private Long quantity;
+
+    //optimistic lock을 사용하기 위해 vesion 컬럼 추가 persistence꺼
+    @Version
+    private Long version;
 
     public Stock() {
     }

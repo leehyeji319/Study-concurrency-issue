@@ -8,7 +8,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/stock_example
     username: root
     password: 1234
+    hikari:
+      maximum-pool-size: 40 # namedlock 사용을 위해 커넥션 풀 늘려주기
 
+# JPA 쿼리가 어떻게 나가는지
 logging:
   level:
     org:
